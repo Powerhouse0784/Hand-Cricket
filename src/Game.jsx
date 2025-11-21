@@ -22,12 +22,12 @@ function Game() {
   const navigate = useNavigate();
 
   const [player1Runs, setPlayer1Runs] = useState(0);
-  const [player1Out, setPlayer1Out] = useState(false);
+  const [setPlayer1Out] = useState(false);
   const [player2Runs, setPlayer2Runs] = useState(0);
-  const [player2Out, setPlayer2Out] = useState(false);
+  const [setPlayer2Out] = useState(false);
   const [battingPlayer, setBattingPlayer] = useState('player1');
-  const [player1Choice, setPlayer1Choice] = useState(null);
-  const [player2Choice, setPlayer2Choice] = useState(null);
+  const [setPlayer1Choice] = useState(null);
+  const [ setPlayer2Choice] = useState(null);
   const [target, setTarget] = useState(null);
   const [roomCode, setRoomCode] = useState('');
   const [playerId, setPlayerId] = useState('');
@@ -37,8 +37,8 @@ function Game() {
   const [inputDisabled, setInputDisabled] = useState(false);
   const [player1Name, setPlayer1Name] = useState("");
   const [player2Name, setPlayer2Name] = useState("");
-  const [player1Id, setPlayer1Id] = useState("");
-  const [player2Id, setPlayer2Id] = useState("");
+  const [setPlayer1Id] = useState("");
+  const [setPlayer2Id] = useState("");
 
   const [outMessage, setOutMessage] = useState('');
   const [showOutMessage, setShowOutMessage] = useState(false);
@@ -107,11 +107,11 @@ function Game() {
 
   // Redirect if opponent leaves
   useEffect(() => {
-    if (opponentLeft) {
-      const timer = setTimeout(() => navigate('/'), 3000);
-      return () => clearTimeout(timer);
-    }
-  }, [opponentLeft, navigate]);
+  if (opponentLeft) {
+    const timer = setTimeout(() => navigate('/'), 3000);
+    return () => clearTimeout(timer);
+  }
+}, [opponentLeft, navigate, handleGameStateUpdate]);
 
   // Sound Effects
   const playYay = () => {

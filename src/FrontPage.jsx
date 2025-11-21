@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import welcome_img from './assets/welcome_img.jpg';
@@ -6,7 +6,7 @@ import cricketField from './assets/cricket-field.png';
 
 function FrontPage() {
   const [playerName, setPlayerName] = useState('');
-  const [weatherEffect, setWeatherEffect] = useState('cloudy');
+  const [weatherEffect] = useState('cloudy');
   const navigate = useNavigate();
 
   const handleStartGame = () => {

@@ -24,3 +24,4 @@ yarn-error.log*
 
 supabaseClient.js
 /src/supabaseClient.js
+.vercel
